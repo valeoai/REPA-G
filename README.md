@@ -4,8 +4,8 @@
   <a href="https://scholar.google.com/citations?user=9Mr--hUAAAAJ" target="_blank">Nicolas&nbsp;Sereyjol-Garros</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://ellingtonkirby.github.io/" target="_blank">Ellington&nbsp;Kirby</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=YhTdZh8AAAAJ&hl=en" target="_blank">Victor&nbsp;Letzelter</a><sup>1,2</sup> &ensp; <b>&middot;</b> &ensp;
-  <a href="https://nerminsamet.github.io/" target="_blank">Nermin&nbsp;Samet</a><sup>1</sup>&ensp;<b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=n_C2h-QAAAAJ&hl=en" target="_blank">Victor&nbsp;Besnier</a><sup>1</sup> &ensp; 
+  <a href="https://nerminsamet.github.io/" target="_blank">Nermin&nbsp;Samet</a><sup>1</sup>&ensp;<b>&middot;</b> &ensp;
 </p>
 
 <p align="center">
@@ -21,6 +21,8 @@
 
 ## Overview
 
+While representation alignment with selfsupervised models has been shown to improve diffusion model training, its potential for enhancing inference-time conditioning remains largely unexplored. We introduce Representation-Aligned Guidance (REPA-G), a framework that leverages these aligned representations, with rich semantic properties, to enable test-time conditioning from features in generation. By optimizing a similarity objective (the potential) at inference, we steer the denoising process toward a conditioned representation extracted from a pre-trained feature extractor. Our method provides versatile control at multiple scales, ranging from fine-grained texture matching via single patches to broad semantic guidance using global image feature tokens. We further extend this to multi-concept composition, allowing for the faithful combination of distinct concepts. REPA-G operates entirely at inference time, offering a flexible and precise alternative to often ambiguous text prompts or coarse class labels. We theoretically justify how this guidance enables sampling from the potential-induced tilted distribution. Quantitative results on ImageNet and COCO demonstrate that our approach achieves high-quality, diverse generations.
+
 ![](assets/visuals.png)
 
 
@@ -29,47 +31,38 @@
 If you find our work useful, please consider citing:
 
 ```bibtex
-@misc{r3dpa,
-      title={Leveraging 3D Representation Alignment and RGB Pretrained Priors for LiDAR Scene Generation}, 
-      author={Nicolas Sereyjol-Garros and Ellington Kirby and Victor Besnier and Nermin Samet},
+@misc{sereyjol2026repag,
+      title={Test-Time Conditioning with Representation-Aligned Visual Features}, 
+      author={Nicolas Sereyjol-Garros and Ellington Kirby and Victor Letzelter and Victor Besnier and Nermin Samet},
       year={2026},
-      eprint={2601.07692},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2601.07692}, 
 }
 ```
 ## Getting Started
 ### 1. Environment Setup
-To set up our environment, please run:
+To install depedencies, please run:
 
 ```bash
-
+pip install -r requirements.txt
 ```
 
-### 2. Prepare the training data
-Download and extract the training split of the [ImageNet-1K](https://www.image-net.org/challenges/LSVRC/2012/index) dataset. Once it's ready, run the following command to preprocess the dataset:
-
-```bash
-python preprocessing.py --imagenet-path /PATH/TO/IMAGENET_TRAIN
-```
-
-Replace `/PATH/TO/IMAGENET_TRAIN` with the actual path to the extracted training images.
-
-
-### 3. Download the pretrained model
+### 2. Download the pretrained model
 
 To Download together REPA-E, REPA and SiT without alignmnet, run the script 
 
 ```bash 
-bash scripts/download_sit.sh
+bash scripts/download/download_sit.sh
 ```
 
-### 4. Demo
+### 3. Demo
 
-streamlit
+Run the demo with
+```bash
+streamlit run app/home.py
+```
 
-### 5. (Optional) Download additional visual backbone for evaluation
+### (Optional) Download additional visual backbone for evaluation
 
 For evaluation of alignment with anchors with additional image backbone, download the image backbones needed and put them in `ckpts`
 
@@ -80,16 +73,29 @@ For evaluation of alignment with anchors with additional image backbone, downloa
 or run the script 
 
 ```bash 
-bash scripts/download_image_backbone.sh
+bash scripts/download/download_image_backbone.sh
 ```
 
+### 4. Prepare ImageNet
+Download and extract the training split of the [ImageNet-1K](https://www.image-net.org/challenges/LSVRC/2012/index) dataset. Once it's ready, run the following command to preprocess the dataset:
+
+```bash
+python preprocessing.py --imagenet-path /PATH/TO/IMAGENET_TRAIN
+```
+
+Replace `/PATH/TO/IMAGENET_TRAIN` with the actual path to the extracted training images.
 
 
 ### 5. Evaluate
 
-To generate samples and save them in a `.npz` file for evaluation, run the following script after after making sure the parameters match your model path. 
+Download reference file for ImageNet with
 ```bash
-bash scripts/sample.sh 
+bash scripts/download/download_ref_in.sh
+```
+
+Example scripts for generation and evaluation (average feature conditioning) are provided in `scripts/eval`. Run for example,
+```bash
+bash scripts/eval/eval_imagenet_repae.sh
 ```
 
 

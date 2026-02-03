@@ -27,55 +27,10 @@ from samplers import euler_sampler, euler_maruyama_sampler, compute_single_step_
 from models.sit import SiT_models
 from models.autoencoder import vae_models
 from utils import load_encoders, load_sit_and_vae
-from dataset_not_h5 import ImageNetDataset
-from dataset_coco import SimpleCOCODataset
+
 # from batched_quality_evaluation import Aesthetics, ImageReward, PickScore
 
 
-preprocess_raw_img = transforms.Compose([
-    transforms.Resize(256),
-    transforms.CenterCrop(256),
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
-])
-
-@st.cache_resource
-def load_imagenet(root):
-    dataset_dino = ImageNetDataset(
-        root=root,
-        split='train',
-        transform=preprocess_raw_img,
-    )
-    dataset_vis = ImageNetDataset(
-        root=root,
-        split='train',
-        transform=transforms.Compose([
-            transforms.Resize(256),
-            transforms.CenterCrop(256),
-            ]))
-    return dataset_dino, dataset_vis
-
-@st.cache_resource
-def load_coco(root, split='train', year='2017'):
-    dataset_dino = SimpleCOCODataset(
-        root=root,
-        split=split,
-        year=year,
-        image_size=256,
-        transform=preprocess_raw_img,
-    )
-    dataset_vis = SimpleCOCODataset(
-        root=root,
-        split=split,
-        year=year,
-        image_size=256,
-        transform=transforms.Compose([
-            transforms.Resize(256),
-            transforms.CenterCrop(256),
-        ]),
-    )
-    return dataset_dino, dataset_vis
 
 def display_image(img):
     st.image(img, width=256)
