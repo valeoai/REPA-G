@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <!-- <a href="">🌐 Project Page</a> &ensp; -->
+  <!-- <a href="https://arxiv.org/abs/2602.03753">🌐 Project Page</a> &ensp; -->
   <a href="">📃 Paper</a>
 </p>
 
