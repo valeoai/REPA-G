@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <!-- <a href="https://arxiv.org/abs/2602.03753">🌐 Project Page</a> &ensp; -->
-  <a href="">📃 Paper</a>
+  <!-- <a href="">🌐 Project Page</a> &ensp; -->
+  <a href="https://arxiv.org/abs/2602.03753">📃 Paper</a>
 </p>
 
 ![](assets/teaser.png)
@@ -35,8 +35,10 @@ If you find our work useful, please consider citing:
       title={Test-Time Conditioning with Representation-Aligned Visual Features}, 
       author={Nicolas Sereyjol-Garros and Ellington Kirby and Victor Letzelter and Victor Besnier and Nermin Samet},
       year={2026},
+      eprint={2602.03753},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.03753}, 
 }
 ```
 ## Getting Started
