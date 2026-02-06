@@ -1,7 +1,8 @@
 #!/bin/bash
 
+export TORCH_HOME=$HOME/.cache/torch
 
-srun torchrun --nproc_per_node=4  --master_port=$MASTER_PORT generate.py \
+torchrun --nproc_per_node=1 generate.py \
     --data-dir data/ImageNet \
     --mode sde \
     --num-steps 250 \

@@ -334,17 +334,18 @@ if __name__ == "__main__":
                 potential_type_1 = st.selectbox(
                     "Select Potential",
                     ["REPA (full)", "REPA (masked)", "Mean Feature Alignment", "Free Energy", "Uncond"],
-                    key="pot1"
+                    key="pot1",
+                    index = 4,
                 )
                 if potential_type_1 == "REPA (full)":
-                    lambda_1 = st.slider("Lambda (REPA 1)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda1")
+                    lambda_1 = st.slider("Lambda (REPA 1)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda1")
                 elif potential_type_1 == "REPA (masked)":
-                    lambda_1 = st.slider("Lambda (REPA 1)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda1")
+                    lambda_1 = st.slider("Lambda (REPA 1)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda1")
                     st.info("👆 Select mask region in the interactive feature map below")
                 elif potential_type_1 == "Mean Feature Alignment":
                     lambda_1 = st.slider("Lambda (Mean 1)", 0.0, 100000.0, 50000.0, step=0.1, key="lambda1")
                 elif potential_type_1 == "Free Energy":
-                    lambda_1 = st.slider("Lambda (Free Energy 1)", 0.0, 20000.0, 3000.0, step=10.0, key="lambda1")
+                    lambda_1 = st.slider("Lambda (Free Energy 1)", 0.0, 20000.0, 10000.0, step=10.0, key="lambda1")
                     temperature_1 = st.slider("Temperature 1", 0.1, 10.0, 1.0, step=0.1, key="temp1")
                 if potential_type_1 != "Uncond":
                     st.subheader("Interactive Feature Map 1")
@@ -363,17 +364,18 @@ if __name__ == "__main__":
                 potential_type_2 = st.selectbox(
                     "Select Potential",
                     ["REPA (full)", "REPA (masked)", "Mean Feature Alignment", "Free Energy", "Uncond"],
-                    key="pot2"
+                    key="pot2",
+                    index = 4,
                 )
                 if potential_type_2 == "REPA (full)":
-                    lambda_2 = st.slider("Lambda (REPA 2)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda2")
+                    lambda_2 = st.slider("Lambda (REPA 2)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda2")
                 elif potential_type_2 == "REPA (masked)":
-                    lambda_2 = st.slider("Lambda (REPA 2)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda2")
+                    lambda_2 = st.slider("Lambda (REPA 2)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda2")
                     st.info("👆 Select mask region in the interactive feature map below")
                 elif potential_type_2 == "Mean Feature Alignment":
                     lambda_2 = st.slider("Lambda (Mean 2)", 0.0, 100000.0, 50000.0, step=0.1, key="lambda2")
                 elif potential_type_2 == "Free Energy":
-                    lambda_2 = st.slider("Lambda (Free Energy 2)", 0.0, 20000.0, 3000.0, step=10.0, key="lambda2")
+                    lambda_2 = st.slider("Lambda (Free Energy 2)", 0.0, 20000.0, 10000.0, step=10.0, key="lambda2")
                     temperature_2 = st.slider("Temperature 2", 0.1, 10.0, 1.0, step=0.1, key="temp2")
                 if potential_type_2 != "Uncond":
                     st.subheader("Interactive Feature Map 2")
@@ -392,17 +394,18 @@ if __name__ == "__main__":
                 potential_type_3 = st.selectbox(
                     "Select Potential",
                     ["REPA (full)", "REPA (masked)", "Mean Feature Alignment", "Free Energy", "Uncond"],
-                    key="pot3"
+                    key="pot3",
+                    index = 4,
                 )
                 if potential_type_3 == "REPA (full)":
-                    lambda_3 = st.slider("Lambda (REPA 3)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda3")
+                    lambda_3 = st.slider("Lambda (REPA 3)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda3")
                 elif potential_type_3 == "REPA (masked)":
-                    lambda_3 = st.slider("Lambda (REPA 3)", 0.0, 100000.0, 50000.0, step=100.0, key="lambda3")
+                    lambda_3 = st.slider("Lambda (REPA 3)", 0.0, 100000.0, 10000.0, step=100.0, key="lambda3")
                     st.info("👆 Select mask region in the interactive feature map below")
                 elif potential_type_3 == "Mean Feature Alignment":
                     lambda_3 = st.slider("Lambda (Mean 3)", 0.0, 100000.0, 50000.0, step=0.1, key="lambda3")
                 elif potential_type_3 == "Free Energy":
-                    lambda_3 = st.slider("Lambda (Free Energy 3)", 0.0, 20000.0, 3000.0, step=10.0, key="lambda3")
+                    lambda_3 = st.slider("Lambda (Free Energy 3)", 0.0, 20000.0, 10000.0, step=10.0, key="lambda3")
                     temperature_3 = st.slider("Temperature 3", 0.1, 10.0, 1.0, step=0.1, key="temp3")
                 if potential_type_3 != "Uncond":
                     st.subheader("Interactive Feature Map 3")
