@@ -3,7 +3,7 @@
 export TORCH_HOME=$HOME/.cache/torch
 
 torchrun --nproc_per_node=1  generate.py \
-    --data-dir /datasets_local/nsereyjo/ImageNet \
+    --data-dir data/ImageNet \
     --mode sde \
     --num-steps 250 \
     --cfg-scale 1.0 \

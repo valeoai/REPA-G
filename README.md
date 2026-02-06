@@ -64,6 +64,9 @@ Run the demo with
 streamlit run app/home.py
 ```
 
+A toy example is also provided in `toy_example/toy_example.ipynb`
+
+
 ### (Optional) Download additional visual backbone for evaluation
 
 For evaluation of alignment with anchors with additional image backbone, download the image backbones needed and put them in `ckpts`
@@ -95,7 +98,7 @@ Download reference file for ImageNet with
 bash scripts/download/download_ref_in.sh
 ```
 
-Example scripts for generation and evaluation (average feature conditioning) are provided in `scripts/eval`. Run for example,
+Example scripts for generation and evaluation (average feature conditioning) are provided in `scripts/eval`. Change --data-dir argument with the correct path to ImageNet and run for example,
 ```bash
 bash scripts/eval/eval_imagenet_repae.sh
 ```
@@ -104,6 +107,7 @@ bash scripts/eval/eval_imagenet_repae.sh
 ## Acknowledgement
 This codebase is largely built upon:
 - [REPA-E](https://github.com/End2End-Diffusion/REPA-E)
+- [ADM evaluation suite](https://github.com/openai/guided-diffusion/tree/main/evaluations)
 
 We sincerely thank the authors for making their work publicly available.
 
