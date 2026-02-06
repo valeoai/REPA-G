@@ -185,8 +185,6 @@ evals/
 *.out
 *.log
 classify_image_graph_def.pb
-requirements.txt
-evaluate256.py
 pretrained/
 log
 ckpts
