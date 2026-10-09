@@ -1,4 +1,4 @@
-<h1 align="center"> REPA-G - Official implementation of "Test-Time Conditioning with Representation-Aligned Visual Features"</h1>
+<h1 align="center"> [NeurIPS'26] Official implementation of "REPA-G: Test-Time Conditioning with Representation-Aligned Visual Features"</h1>
 
 <p align="center">
   <a href="https://scholar.google.com/citations?user=9Mr--hUAAAAJ" target="_blank">Nicolas&nbsp;Sereyjol-Garros</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
@@ -14,6 +14,7 @@
 
 <p align="center">
   <!-- <a href="">🌐 Project Page</a> &ensp; -->
+  <a href="https://valeoai.github.io/REPA-G/">🌐 Project page</a>
   <a href="https://arxiv.org/abs/2602.03753">📃 Paper</a>
 </p>
 
@@ -31,14 +32,11 @@ While representation alignment with selfsupervised models has been shown to impr
 If you find our work useful, please consider citing:
 
 ```bibtex
-@misc{sereyjol2026repag,
-      title={Test-Time Conditioning with Representation-Aligned Visual Features}, 
-      author={Nicolas Sereyjol-Garros and Ellington Kirby and Victor Letzelter and Victor Besnier and Nermin Samet},
-      year={2026},
-      eprint={2602.03753},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2602.03753}, 
+@inproceedings{sereyjol2026repag,
+  title     = {{REPA-G}: Test-Time Conditioning with Representation-Aligned Visual Features},
+  author    = {Sereyjol-Garros, Nicolas and Kirby, Ellington and Letzelter, Victor and Besnier, Victor and Samet, Nermin},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026}
 }
 ```
 ## Getting Started
